@@ -1,8 +1,12 @@
 import react from 'react'
 import electhon from '../images/electhon.png'
-import {Link} from 'react-router-dom';
+import {Link,useParams} from 'react-router-dom';
 import './Navbar.css'
 export default function Navbar(){
+    // const { token } = useParams("token");
+    const token=localStorage.getItem("token")
+    console.log("Token In NaveBar "+token)
+
     return <div className = 'navbar'>
         <img src ={electhon} alt =""></img>
         <ul className='nav-menu'>
@@ -15,9 +19,11 @@ export default function Navbar(){
             <Link to='./Profile'>
             <li>Profile</li>
             </Link> 
-            <Link to='./CreatePost'>
-            <li>Create Post</li>
-            </Link> 
+            {/* <Link to='./CreatePost/'> */}
+            <li>
+                <a href={`http://localhost:3000/CreatePost/${token}`}>Create Post</a>
+            </li>
+            {/* </Link>  */}
             
         </ul>
     </div>

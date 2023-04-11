@@ -14,14 +14,13 @@ function App() {
   return (
     <BrowserRouter>
     <div className="App">
-      <Navbar/>
-
+      <Navbar></Navbar>
       <Routes>
-      <Route path='/' element ={<Home/>}/>
+      <Route path='/:token' element ={<Home/>}/>
       <Route path='/Signup' element ={<Signup/>}/>
       <Route path='/Signin' element ={<Signin/>}/>
       <Route path='/Profile' element ={<Profile/>}/>
-      <Route path='/CreatePost' element ={<CreatePost/>}/>
+      <Route path='/CreatePost/:token' element ={<CreatePost/>}/>
       
       </Routes>
 

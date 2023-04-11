@@ -1,7 +1,15 @@
 import React from 'react'
 import './home.css'
+import {useParams} from 'react-router-dom';
+import Navbar from './Navbar';
+
+
 export default function Home() {
+const {token}=useParams("token")
+console.log("Token In Home "+token)
   return (
+    <>
+    {/* <Navbar token={token}/> */}
     <div className="home">
         <div className="card">
         <div className="card-header">
@@ -33,5 +41,6 @@ export default function Home() {
         </div>
         </div>
     </div>
+    </>
   )
 }

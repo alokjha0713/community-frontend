@@ -35,10 +35,12 @@ const postDetails = async ()=>{
     // }).then((data)=>{setUrl("https://res.cloudinary.com/commcloud/image/upload/v1681198456/background_s7zrfg.webp")})
     // .catch(err=>{console.log(err)});
 
-    fetch("http://localhost:5000/createPost",{
+    const token=localStorage.getItem("token")
+    fetch(`http://localhost:5000/api/post/createPost/${token}`,{
         method:"post",
         headers:{
             'Content-Type' : 'application/json',
+            
         },
 
         body:JSON.stringify({
@@ -53,7 +55,7 @@ const postDetails = async ()=>{
             if(data.message)
             {
                 notifyB(data.message);
-                navigate("/");
+                navigate(`/${data.token}`);
             }
             console.log(data)});
 }

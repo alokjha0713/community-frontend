@@ -21,7 +21,7 @@ export default function Signin() {
             return ;
         }
         
-        fetch("http://localhost:5000/signin",{
+        fetch("http://localhost:5000/api/user/signIn",{
             method:"post" ,
             headers:{
                 "Content-Type": "application/json"
@@ -34,14 +34,14 @@ export default function Signin() {
         .then(data=>{
             if(data.error)
             {notifyA(data.error);}
-            if(data.message)
-            {
+            // if(data.message)
+            // {
 
-                // localStorage.setItem('token',data.token);
+                localStorage.setItem('token',data.token);
                 notifyB(data.message);
-                console.log(data)
-                navigate("/");
-            }
+                console.log("Token In Frontend "+data.token)
+                navigate(`/${data.token}`);
+            // }
             console.log(data)});
       };
   return (

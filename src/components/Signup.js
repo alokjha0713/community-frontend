@@ -25,24 +25,24 @@ export default function Signup() {
         return ;
     }
     
-    fetch("http://localhost:5000/signup",{
+    fetch("http://localhost:5000/api/user/signup",{
         method:"post" ,
         headers:{
             "Content-Type": "application/json"
         },
         body:JSON.stringify({
-            name :name,email: email,userName: userName ,password: password
+            name :name,email: email,mobileNumber:"6394414716",Address:"xyz",password: password
         })
     })
     .then(res=>res.json())
     .then(data=>{
         if(data.error)
         {notifyA(data.error);}
-        if(data.message)
-        {
+        // if(data.message)
+        // {
             notifyB(data.message);
             navigate("/signin");
-        }
+       // }
         console.log(data)});
   };
   return (
