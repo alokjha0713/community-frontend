@@ -2,8 +2,10 @@ import React from 'react'
 import './createPost.css'
 import { useEffect, useState } from "react";
 import { ToastContainer ,toast} from 'react-toastify';
-import { Link,useNavigate } from "react-router-dom";
+import { Link,useNavigate,useParams } from "react-router-dom";
 export default function CreatePost() {
+
+    const token=localStorage.getItem("token")
     const loadfile = (event)=>{
         const output = document.getElementById('output');
         output.src = URL.createObjectURL(event.target.files[0]);
@@ -12,6 +14,7 @@ export default function CreatePost() {
     }
 }
 const [body, setBody] = useState("");
+let urlfinal="";
 const [image, setImage] = useState("");
 const [url, setUrl] = useState("");
 const navigate = useNavigate();
@@ -20,6 +23,7 @@ const notifyB = (msg)=>{toast.success(msg);}
 const postDetails = async ()=>{
     console.log(body , image);
     const data = new FormData();
+
     data.append("file", image)
     data.append("upload_preset", "community2")
     data.append("cloud_name", "commcloud")
@@ -29,6 +33,8 @@ const postDetails = async ()=>{
     })
     const ImgData = await res1.json()
     const url1 = ImgData.url;
+    urlfinal=url1
+    console.log("00000000000000444444444444444444444444"+url1);
     setUrl(url1);
     //.then(res=>{
     //     res.json("hello i occured")
@@ -36,28 +42,24 @@ const postDetails = async ()=>{
     // .catch(err=>{console.log(err)});
 
     const token=localStorage.getItem("token")
+    console.log("this is alok"+url)
     fetch(`http://localhost:5000/api/post/createPost/${token}`,{
         method:"post",
         headers:{
             'Content-Type' : 'application/json',
-            
         },
 
         body:JSON.stringify({
-            body:body,pic:url
+            body:body,pic:urlfinal
         })
 
     })
     .then(res=>res.json())
         .then(data=>{
-            if(data.error)
-            {notifyA(data.error);}
-            if(data.message)
-            {
-                notifyB(data.message);
-                navigate(`/${data.token}`);
-            }
-            console.log(data)});
+            console.log(data)
+            navigate(`/home/${token}`)
+        });
+
 }
     return (
     <div className='create'>
@@ -67,7 +69,7 @@ const postDetails = async ()=>{
             <h6 onClick={()=>{postDetails()}}>Share </h6>
         </div>
         <div className='create-upload-post'>
-            <img id ='output' src='https://th.bing.com/th/id/OIP.n7ajLUEb277vIJ4loEWbBAHaGV?pid=ImgDet&rs=1'/>
+            <img id ='output' src='https://th.bing.com/th/id/OIP.n7ajLUEb277vIJ4loEWbBAHaGV?pid=ImgDet&rs=1' alt=''/>
             <input type='file' placeholder='Choose file' accept="image/*,video/*" onChange={(event) => {
             loadfile(event);
             setImage(event.target.files[0])

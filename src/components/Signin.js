@@ -38,6 +38,8 @@ export default function Signin() {
             // {
 
                 localStorage.setItem('token',data.token);
+                console.log("I am in sign inn "+data.user._id);
+                localStorage.setItem('user',data.user._id)
                 notifyB(data.message);
                 console.log("Token In Frontend "+data.token)
                 navigate(`/${data.token}`);
