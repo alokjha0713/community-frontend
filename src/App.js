@@ -21,7 +21,6 @@ function App() {
       <Route path='/Signin' element ={<Signin/>}/>
       <Route path='/Profile' element ={<Profile/>}/>
       <Route path='/CreatePost/:token' element ={<CreatePost/>}/>
-      
       </Routes>
 
       <ToastContainer
