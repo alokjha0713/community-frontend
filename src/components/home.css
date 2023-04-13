@@ -1,56 +1,134 @@
-.card{
+.comm-card-background-image{
+   /*  background: linear-gradient(to , #FF9933, #FFFFFF, #128807); 
+    /* background: linear-gradient(to bottom, #FF5733, #FFC300, #4CAF50, #008CBA, #4834d4, #8e44ad); */
+    /* background: linear-gradient(to bottom, #FF9933, #FF9933 16.66%, #FFFFFF 16.66%, #FFFFFF 33.33%, #128807 33.33%, #128807 50%, #FFFFFF 50%, #FFFFFF 66.66%, #FF9933 66.66%, #FF9933 83.33%, #128807 83.33%, #128807); */
+    /* background: linear-gradient(to bottom, #FF9933, #FF9933 33.33%, #FFFFFF 33.33%, #FFFFFF 66.66%, #128807 66.66%, #128807); */
+    /* background: linear-gradient(to bottom, #FFA033, #FFA033 33.33%, #FFFFFF 33.33%, #FFFFFF 66.66%, #107807 66.66%, #107807); */
+    /* background-image:url("https://img.freepik.com/free-photo/luxury-plain-green-gradient-abstract-studio-background-empty-room-with-space-your-text-picture_1258-102387.jpg?w=826&t=st=1681393708~exp=1681394308~hmac=54889050514fdd48cfaf39d48de9c1634ad8ca459371dccfe67309b5a4b6e609") ;
+    /* background-image: url("https://i.pinimg.com/originals/74/da/e9/74dae94ffb1a2829596c123019127f8b.jpg"); */
+}
+.comm-card{
     max-width: 800px;
+    background-color: #b6f3d2;
     height: max-content;
+    border-radius: 20px;
+    /* background: linear-gradient(to bottom, #FF5733, #FFC300, #4CAF50, #008CBA, #4834d4, #8e44ad); */
     margin: 25px auto;
     border: 1px solid rgb(173,173,173);
     border-radius: 5px;
+
 }
-.card-header{
+.comm-card-header{
     display:flex;
-    align-items: center;
+    align-items: center
 }
-.card-header>h5{
+.comm-card-header>h4{
     margin:0;
     padding :50px;
+    font-size: 30px;
 }
-.card-pic img{
-    width:100px;
-    border-radius: 50%;
-    height: auto ;
+.comm-card-pic >img{
+    width: 100px;
+    border-radius:100%;
+    height: auto;
+    border-radius: 20px;
     object-fit: contain;
     padding:5px;
 }
-.card-image img{
+.comm-card-image img{
     width: 100%;
+
+    border-radius: 5px;
 }
-.card-content{
+.comm-card-content{
     text-align: left;
     line-height: 4px ;
     padding : 3px 10px;
-    border: 1px solid rgb(173,173,173);
 }
-.add-comment{
+.comm-add-comment{
     display: flex;
     align-items: center;
 
 }
-.add-comment input{
+.comm-add-comment input{
     margin:0;
     outline : none ;
     border:none;
     padding :10px;
 }
-.comment{
+.comm-comment{
     border: none;
+    cursor: pointer;
     background-color: transparent;
     color: rgb(0, 8, 255);
 }
 
 .material-symbols-outlined-red {
     color: red;
-  font-variation-settings:
-  'FILL' 1,
-  'wght' 700,
-  'GRAD' 0,
-  'opsz' 48
+    font-variation-settings:
+    'FILL' 1,
+    'wght' 700,
+    'GRAD' 0,
+    'opsz' 48
+}
+
+.material-symbols-outlined{
+    cursor: pointer;
+}
+
+.comm-showComment{
+    width: 100vw;
+    min-height:100vh ;
+    border-radius: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(16, 13, 13, 0.4);
+    
+}
+
+.comm-container{
+    display: flex;
+    width: 80%;
+    border-radius: 20px;
+    background-color: white;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    height: 500px;
+}
+
+.comm-postPic{
+    background-color: black;
+    display: flex;
+    border-radius: 20px;
+    align-items: center;
+}
+
+.comm-postPic img{
+    object-fit: contain;
+    width: 100%;
+    border-radius: 20px;
+}
+
+.comm-details{
+    width: 100%;
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+}
+
+.comm-comment-section{
+    flex-grow: 4;
+    text-align: left;
+    margin-left: 10px;
+}
+
+.comm-close-comment{
+    position: fixed;
+    top: 1%;
+    right: 5%;
+    color: white;
+    border: none;
+    cursor: pointer;
 }

@@ -62,28 +62,28 @@ const postDetails = async ()=>{
 
 }
     return (
-    <div className='create'>
-        <div className='create-form'>
-        <div className ='create-post'>
+    <div className='post-create'>
+        <div className='post-create-form'>
+        <div className ='post-create-post'>
             <h1>Create a New Post</h1>
             <h6 onClick={()=>{postDetails()}}>Share </h6>
         </div>
-        <div className='create-upload-post'>
-            <img id ='output' src='https://th.bing.com/th/id/OIP.n7ajLUEb277vIJ4loEWbBAHaGV?pid=ImgDet&rs=1' alt=''/>
+        <div className='post-create-upload-post'>
+            <img id ='output' src='https://th.bing.com/th/id/OIP.n7ajLUEb277vIJ4loEWbBAHaGV?pid=ImgDet&rs=1'  alt=''/>
             <input type='file' placeholder='Choose file' accept="image/*,video/*" onChange={(event) => {
             loadfile(event);
             setImage(event.target.files[0])
           }} >
             </input>
         </div>
-        <div className="create-show-profile">
-            <div className="create-profile-pic">
+        <div className="post-create-show-profile">
+            <div className="post-create-profile-pic">
                 <img  src="https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cGVyc29ufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" width={500} height={500} alt="" >
                 </img>
             </div>
             <h5>Ramesh</h5>
         </div>
-        <div className='create-caption'>
+        <div className='post-create-caption'>
             <textarea style={{width:"100%"} } placeholder="give a caption" value={body} onChange={((e) => {
                 setBody(e.target.value);
             })}></textarea>

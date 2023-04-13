@@ -1,34 +1,37 @@
-.create{
-    background-image: url("https://wallpapercave.com/wp/wp3485022.jpg");
+.post-create{
+    /* background: linear-gradient(to right, #FF9933, #FFFFFF, #128807); */
     background-size: cover;
     flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.create-form{
-    background-color: #001589ff;
+.post-create-form{
+    /* background: linear-gradient(to bottom, #FF5733, #FFC300, #4CAF50, #008CBA, #4834d4, #8e44ad); */
+
+    background-color: white;
     max-width: 800px;
     height: max-content;
     margin: 25px auto;
     border: 1px solid rgb(173,173,173);
     border-radius: 5px;
 }
-.create-post{
+.post-create-post{
     display:flex;
     align-items: center;
     text-align: center;
     justify-content :  space-around ;
 }
-.create-post h6{
+.post-create-post h6{
     color:blue;
     cursor: pointer;
 }
-.create-upload-post{
+.post-create-upload-post{
 }
-.create-upload-post img{
+.post-create-upload-post >img{
+    border-radius: 35px;
 }
-.create-show-profile img{
+.post-create-show-profile img{
     
         width:100px;
         border-radius: 50%;
@@ -36,15 +39,15 @@
         object-fit: contain;
         padding:5px;
 }
-.create-show-profile{
+.post-create-show-profile{
     display:flex;
     align-items: center;
 }
-.create-show-profile>h5{
+.post-create-show-profile>h5{
     margin:0;
     padding :50px;
 }
-.create-caption{
+.post-create-caption{
     background-color: transparent;
     width: 90%;
 }
